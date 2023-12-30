@@ -22,9 +22,11 @@ A soothing Lofi Music App built using React and Tailwind CSS, offering a collect
 3. **Install Dependencies:** `npm install`
 4. **Start the App:** `npm start`
 
-## 🍰 Demo
+## Screenshot
 
-![Lofi Music App Screenshot](/path/to/screenshot.png)
+![image](https://github.com/ArvindParekh/Lofi-Music-App/assets/71211731/179e458f-4906-4c2d-8eb6-b4be3ff7addf)
+
+## 🍰 Demo
 
 [Live Demo](https://lofi-beats.vercel.app)
 
