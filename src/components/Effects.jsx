@@ -5,9 +5,9 @@ import effectsData from "../data/effects";
 
 const Effects = () => {
     return (
-        <div>
+        <div className="text-center md:lg:text-left">
             <h1 className="text-gray-400 font-medium text-xl bg-slate-800 bg-opacity-50 rounded-full inline-block px-5 py-2 my-5">Effects</h1>
-            <div className="flex flex-wrap items-center justify-between">
+            <div className="flex flex-col md:lg:flex-row flex-wrap items-center justify-between">
 
                 {effectsData.map((effect, index)=>{
                     return (
