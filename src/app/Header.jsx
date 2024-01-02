@@ -5,7 +5,7 @@ const Header = function () {
             <div className="flex items-center justify-between my-10">
                 <div className=" flex flex-col">
                     <div className="text-5xl text-gray-100 font-bold">Lo-Fi</div>
-                    <div className="text-gray-400 font-medium">Welcoming another soul to the realm of Lo-Fi addiction.</div>
+                    <div className="hidden md:lg:inline-block md:lg:text-gray-400 md:lg:font-medium md:lg:pr-10">Welcoming another soul to the realm of Lo-Fi addiction.</div>
                 </div>
                 <div>
                     <a href="https://github.com/ArvindParekh" target="_blank" rel="noreferrer">
