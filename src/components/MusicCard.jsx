@@ -44,7 +44,7 @@ const MusicCard = (props) => {
 
     return (
         <>
-            <div className={`cursor-pointer relative rounded-xl flex items-center justify-center transition-all duration-100 overflow-hidden ${isSelected ? `border-4 border-green-500` : ``}`} onClick={toggleSound}>
+            <div className={`cursor-pointer relative rounded-xl flex items-center justify-center transition-all duration-100 overflow-hidden min-w-max ${isSelected ? `border-4 border-green-500` : ``}`} onClick={toggleSound}>
                 {/* {props.name} */}
                 <div className="overflow-hidden rounded-md">
                     <img

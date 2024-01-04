@@ -15,7 +15,7 @@ const Tracks = () => {
         <>
             <div id="track-section" className="text-center md:lg:text-left">
                 <h1 className="text-gray-400 font-medium text-xl bg-slate-800 bg-opacity-50 rounded-full inline-block px-5 py-2 ">Tracks</h1>
-                <div id="trackCards" className="flex flex-col md:lg:flex-row items-center justify-between">
+                <div id="trackCards" className="flex items-center gap-5 lg:justify-between overflow-x-auto p-3">
 
                     {tracksData.map((track, index) => {
                         return (

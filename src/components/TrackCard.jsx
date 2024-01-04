@@ -54,7 +54,7 @@ const TrackCard = (props) => {
             <div className="flex flex-col justify-center">
                 {/* <div className="overflow-hidden rounded-md cursor-pointer" onClick={togglePlay}> */}
                 <div
-                    className={`overflow-hidden rounded-md  cursor-pointer`/*props.trackPlaying==props.id && props.playingStatus  ? 'border-4 border-gray-800' : 'border border-transparent'*/}
+                    className={`overflow-hidden rounded-md min-w-max cursor-pointer`/*props.trackPlaying==props.id && props.playingStatus  ? 'border-4 border-gray-800' : 'border border-transparent'*/}
                     onClick={(event) => {
                         props.onClick(event);
                         // handleClick();
