@@ -31,9 +31,9 @@ A soothing Lofi Music App built using React and Tailwind CSS, offering a collect
 [Live Demo](https://lofi-beats.vercel.app)
 
 ## 📑 To-Dos
-- Add a slider to control volume of effects.
-- Use a different font for the title and make it look catchy (maybe position it in the middle?).
-- Make it responsive.
+<input type="checkbox"> Add a slider to control volume of effects.
+<input type="checkbox"> Use a different font for the title and make it look catchy (maybe position it in the middle?).
+<input type="checkbox"> Make it responsive.
 
 ## 💁 Contributions
 
