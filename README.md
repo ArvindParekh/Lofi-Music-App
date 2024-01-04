@@ -34,6 +34,8 @@ A soothing Lofi Music App built using React and Tailwind CSS, offering a collect
 - [ ] Add a slider to control volume of effects.
 - [ ] Use a different font for the title and make it look catchy (maybe position it in the middle?).
 - [x] Make it responsive.
+<!-- - [ ] Add a music playing animation (spotify mobile) next to the track that is currently playing
+- [ ] Style the scrollbar -->
 
 ## 💁 Contributions
 
