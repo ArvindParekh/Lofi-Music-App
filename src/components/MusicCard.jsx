@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import { useState, useEffect } from "react";
+import ContinuousSlider from "./sliderComponent";
 
 const MusicCard = (props) => {
 
@@ -44,19 +45,22 @@ const MusicCard = (props) => {
 
     return (
         <>
-            <div className={`cursor-pointer relative rounded-xl flex items-center justify-center transition-all duration-100 overflow-hidden min-w-max ${isSelected ? `border-4 border-green-500` : ``}`} onClick={toggleSound}>
-                {/* {props.name} */}
-                <div className="overflow-hidden rounded-md">
-                    <img
-                        src={`/assets/background/${props.src}.jpg`}
-                        width={180}
-                        height={330}
-                        className="object-cover aspect-square hover:scale-105 duration-300"
-                    />
+            <div className="flex flex-col">
+                <div className={`cursor-pointer relative rounded-xl flex items-center justify-center transition-all duration-100 overflow-hidden min-w-max ${isSelected ? `border-4 border-green-500` : ``}`} onClick={toggleSound}>
+                    {/* {props.name} */}
+                    <div className="overflow-hidden rounded-md">
+                        <img
+                            src={`/assets/background/${props.src}.jpg`}
+                            width={180}
+                            height={330}
+                            className="object-cover aspect-square hover:scale-105 duration-300"
+                        />
+                    </div>
+                    <div className={`absolute px-5 bg-slate-100 bg-opacity-50 text-black rounded-3xl ${isSelected ? `bg-green-500 bg-opacity-100 text-white` : ``}`}>
+                        {props.name}
+                    </div>
                 </div>
-                <div className={`absolute px-5 bg-slate-100 bg-opacity-50 text-black rounded-3xl ${isSelected ? `bg-green-500 bg-opacity-100 text-white` : ``}`}>
-                    {props.name}
-                </div>
+                <ContinuousSlider />
             </div>
         </>
     )
