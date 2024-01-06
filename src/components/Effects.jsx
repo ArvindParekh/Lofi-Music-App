@@ -1,6 +1,6 @@
 //card component for effects
 
-import MusicCard from "@/components/MusicCard"
+import MusicCard from "@/components/EffectCard"
 import effectsData from "../data/effects";
 
 const Effects = () => {

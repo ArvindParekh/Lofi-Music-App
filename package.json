@@ -67,7 +67,6 @@
     "react-hook-form": "^7.44.2",
     "react-wrap-balancer": "^0.4.1",
     "recharts": "^2.6.2",
-    "sharp": "^0.31.3",
     "tailwind-merge": "^1.12.0",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.2.0",

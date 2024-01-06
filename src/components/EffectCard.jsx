@@ -8,6 +8,7 @@ const MusicCard = (props) => {
     const [isSelected, setIsSelected] = useState(false);
     const [isPlaying, setIsPlaying] = useState(false);
     const [audio] = useState(new Audio(`/assets/sound/${props.type}/${props.sound}.mp3`));
+    const [value, setValue] = useState(30);
 
     const toggleSound = () => {
         if (props.type === "effect") {
@@ -43,6 +44,11 @@ const MusicCard = (props) => {
         };
     }, [audio]);
 
+    function handleVolumeChange(event, newValue){
+        setValue(newValue);
+        audio.volume = value/100;
+    }
+
     return (
         <>
             <div className="flex flex-col">
@@ -60,7 +66,7 @@ const MusicCard = (props) => {
                         {props.name}
                     </div>
                 </div>
-                <ContinuousSlider />
+                <ContinuousSlider className={`${isSelected? ``: `hidden`}`} value={value} onVolumeChange={handleVolumeChange} />
             </div>
         </>
     )
