@@ -4,7 +4,7 @@ const Header = function () {
         <>
             <div className="flex flex-col space-y-5 sm:flex-row sm:space-y-0 items-center justify-between my-10">
                 <div className=" flex flex-col">
-                    <div className="text-5xl text-gray-100 font-bold">Lo-Fi</div>
+                    <div className="text-5xl text-gray-100 font-bold heading">Lo-Fi</div>
                     <div className="hidden md:lg:inline-block md:lg:text-gray-400 md:lg:font-medium md:lg:pr-10">Welcoming another soul to the realm of Lo-Fi addiction.</div>
                 </div>
                 <div>
