@@ -19,8 +19,8 @@ A soothing Lofi Music App built using React and Tailwind CSS, offering a collect
 
 1. **Clone the Repository:** `git clone https://github.com/ArvindParekh/lofi-music-app.git`
 2. **Navigate to Directory:** `cd lofi-music-app`
-3. **Install Dependencies:** `npm install`
-4. **Start the App:** `npm start`
+3. **Install Dependencies:** `pnpm install`
+4. **Start the App:** `pnpm run dev`
 
 ## Screenshot
 
