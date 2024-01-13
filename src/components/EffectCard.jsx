@@ -24,17 +24,13 @@ const MusicCard = (props) => {
                 setIsSelected(true);
             }
         }
-        else {
-            //if its a track
-            console.log("Not hello");
-        }
     };
 
 
     // Set up an event listener for when the audio can be played
     audio.oncanplaythrough = () => {
         // Do something if needed when the audio is ready
-        console.log('Audio is ready!');
+        // console.log('Audio is ready!');
     };
 
     // Cleanup function when component unmounts

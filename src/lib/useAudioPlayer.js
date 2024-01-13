@@ -11,7 +11,7 @@ function useAudioPlayer(){
     const handleClick = (event)=>{
         const audioSrc = event.target.getAttribute('data-audio-src');
         const trackId = event.target.getAttribute('data-track-id');
-        console.log(trackId);
+        // console.log(trackId);
 
         if(trackId == trackIdPlaying.current){
             //same track clicked by the user, so pause the song; assume song is already playing
