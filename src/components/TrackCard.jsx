@@ -72,7 +72,15 @@ const TrackCard = (props) => {
                 {/* <span className="font-medium text-base leading-none mt-1.5">{props.name}</span>
                 <span className="font-light text-sm text-gray-400 leading-tight">My name is arvind</span> */}
                 <div className="space-y-1 text-sm mt-2.5 transition-all">
-                    <h3 className={`font-medium leading-none ${props.trackPlaying == props.id && props.playingStatus ? 'text-green-400 underline' : ''} transition-all`}>{props.name}</h3>
+                    <div className="flex items-center gap-3">
+                        <h3 className={`font-medium leading-none ${props.trackPlaying == props.id && props.playingStatus ? 'text-green-400 underline' : ''} transition-all`}>{props.name}</h3>
+                        <img 
+                            src="/assets/music-playing-animation.gif" 
+                            alt="Music Playing animation" 
+                            width={20} 
+                            height={10}
+                            className={`${props.trackPlaying == props.id && props.playingStatus? 'opacity-100 visible' : 'opacity-0 invisible'} transition-all duration-200 invert accent-green-900`} />
+                    </div>
                     <p className="text-xs text-muted-foreground">{props.desc}</p>
                 </div>
             </div>
