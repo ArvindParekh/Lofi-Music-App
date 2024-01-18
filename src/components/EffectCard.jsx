@@ -3,6 +3,16 @@
 import { useState, useEffect } from "react";
 import ContinuousSlider from "./sliderComponent";
 
+/**
+ * Represents a Music Card component.
+ * @component
+ * @param {Object} props - The props for the Music Card component.
+ * @param {string} props.type - The type of the music card (e.g., "effect").
+ * @param {string} props.sound - The sound file name for the music card.
+ * @param {string} props.src - The image file name for the music card background.
+ * @param {string} props.name - The name of the music card.
+ * @returns {JSX.Element} The rendered Music Card component.
+ */
 const MusicCard = (props) => {
 
     const [isSelected, setIsSelected] = useState(false);

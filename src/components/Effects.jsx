@@ -3,6 +3,10 @@
 import MusicCard from "@/components/EffectCard"
 import effectsData from "../data/effects";
 
+/**
+ * Renders the Effects component.
+ * @returns {JSX.Element} The rendered Effects component.
+ */
 const Effects = () => {
     return (
         <div className="text-center md:lg:text-left">

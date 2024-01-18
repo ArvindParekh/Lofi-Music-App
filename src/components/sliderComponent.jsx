@@ -5,6 +5,16 @@ import Slider from '@mui/material/Slider';
 // import VolumeDown from '@mui/icons-material/VolumeDown';
 // import VolumeUp from '@mui/icons-material/VolumeUp';
 
+/**
+ * A slider component for controlling volume.
+ *
+ * @component
+ * @param {Object} props - The component props.
+ * @param {number} props.value - The current value of the slider.
+ * @param {Function} props.onVolumeChange - The callback function to be called when the slider value changes.
+ * @param {string} props.className - The CSS class name for the component.
+ * @returns {JSX.Element} The rendered slider component.
+ */
 function ContinuousSlider(props) {
   // const [value, setValue] = React.useState(30);
 

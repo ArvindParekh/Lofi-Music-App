@@ -2,6 +2,11 @@ import TrackCard from "@/components/TrackCard"
 import tracksData from "../data/tracks"
 import useAudioPlayer from "../lib/useAudioPlayer";
 
+/**
+ * Renders the Tracks component.
+ * 
+ * @returns {JSX.Element} The rendered Tracks component.
+ */
 const Tracks = () => {
 
     /*

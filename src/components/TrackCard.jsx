@@ -10,6 +10,22 @@
 
 // import { useState, useEffect } from "react";
 
+/**
+ * TrackCard component represents a card displaying a track in the lofi-music-app.
+ * It allows users to play tracks and ambient effects.
+ *
+ * @component
+ * @param {Object} props - The properties passed to the TrackCard component.
+ * @param {string} props.name - The name of the track.
+ * @param {string} props.desc - The description of the track.
+ * @param {string} props.src - The source of the track's background image.
+ * @param {string} props.sound - The source of the track's audio.
+ * @param {number} props.id - The unique identifier of the track.
+ * @param {number} props.trackPlaying - The ID of the currently playing track.
+ * @param {boolean} props.playingStatus - The playing status of the track.
+ * @param {Function} props.onClick - The function to handle the click event on the track card.
+ * @returns {JSX.Element} The rendered TrackCard component.
+ */
 const TrackCard = (props) => {
 
     /* const [border, setBorder] = useState(false);

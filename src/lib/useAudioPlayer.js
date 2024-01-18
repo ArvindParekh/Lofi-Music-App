@@ -2,6 +2,14 @@
 
 import { useState, useEffect, useRef } from "react";
 
+/**
+ * Custom hook for managing audio player functionality.
+ *
+ * @returns {Object} An object containing the following properties:
+ *   - isPlaying: A boolean indicating whether the audio is currently playing.
+ *   - handleClick: A function to handle click events on audio elements.
+ *   - trackIdPlaying: A reference to the currently playing track ID.
+ */
 function useAudioPlayer(){
     const [isPlaying, setIsPlaying] = useState(false);
     // const [audio, setAudio] = useState(new Audio(`/src/assets/sound/track/crescent-moon.mp3`))
