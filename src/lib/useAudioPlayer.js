@@ -48,8 +48,11 @@ function useAudioPlayer(){
             setIsPlaying(false);
         }
         else if(audio!=null && isPlaying===false){
-            audio.play();
-            setIsPlaying(true);
+            audio.play().then(()=>{
+                setIsPlaying(true);
+            }).catch((error)=>{
+                console.log("Error playing media: ", error);
+            });
         }
 
         else{

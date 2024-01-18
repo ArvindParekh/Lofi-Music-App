@@ -19,19 +19,22 @@ const MusicCard = (props) => {
                 setIsPlaying(false);
                 setIsSelected(false);
             } else {
-                audio.play();
-                setIsPlaying(true);
-                setIsSelected(true);
+                // audio.play().then(()=>console.log("Played")).then((error)=>console.log("Error playing: ", error));
+                let audioPlayPromise = audio.play();
+                if(audioPlayPromise !== undefined){
+                    audioPlayPromise.then(()=>{
+                        setIsPlaying(true);
+                        setIsSelected(true);
+                    })
+                    .catch(error => console.log("Error Playing: ", error));
+                }
             }
         }
     };
 
 
     // Set up an event listener for when the audio can be played
-    audio.oncanplaythrough = () => {
-        // Do something if needed when the audio is ready
-        // console.log('Audio is ready!');
-    };
+
 
     // Cleanup function when component unmounts
     useEffect(() => {
