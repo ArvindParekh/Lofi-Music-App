@@ -1,22 +1,21 @@
-import './App.css'
+import "./App.css";
 import Header from "./app/Header";
 import MainContent from "./app/MainContent";
 import Footer from "./app/Footer";
 // import MusicPage from "./page";
 
 function App() {
+   return (
+      <>
+         <Header />
 
-  return (
-    <>
-      <Header/>
+         <MainContent />
 
-      <MainContent />
-      
-      {/* <MusicPage /> */}
+         {/* <MusicPage /> */}
 
-      <Footer />
-    </>
-  )
+         <Footer />
+      </>
+   );
 }
 
-export default App
+export default App;
