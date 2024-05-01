@@ -72,7 +72,7 @@ const MusicCard = (props) => {
                   />
                </div>
                <div
-                  className={`absolute px-5 bg-slate-100 bg-opacity-50 text-black rounded-3xl ${
+                  className={`pointer-events-none absolute px-5 bg-slate-100 bg-opacity-50 text-black rounded-3xl ${
                      isSelected ? `bg-green-600 bg-opacity-100 text-white` : ``
                   }`}
                >
