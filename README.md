@@ -46,3 +46,8 @@ Contributions are welcome! If you'd like to contribute, feel free to open an iss
 ## 📃 License
 
 This project is licensed under the MIT License - see the [LICENSE](/path/to/LICENSE) file for details.
+
+## 🦸🏻 Contributors
+<!-- If you've contributed to the project, I'd love for you to write your name in the list below and link your preferred account, as such: [<your-name>](<your-account-url>) -->
+
+- [Arvind Parekh](https://twitter.com/ArvindParekh_21)
