@@ -41,7 +41,7 @@ A soothing Lofi Music App built using React and Tailwind CSS, offering a collect
 
 ## 💁 Contributions
 
-Contributions are welcome! If you'd like to contribute, feel free to open an issue or a pull request.
+Contributions are welcome! If you'd like to contribute, please check out the [Contributing Guide](https://github.com/ArvindParekh/Lofi-Music-App/blob/main/CONTRIBUTING.md), and feel free to open an issue or a pull request.
 
 ## 📃 License
 
