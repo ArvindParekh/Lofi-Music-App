@@ -27,6 +27,9 @@ function ContinuousSlider(props) {
           aria-label="Volume"
           value={props.value}
           onChange={handleChange}
+          // sx={{
+          //   color: "#22c55e"
+          // }}
         />
         {/* <VolumeUp /> */}
       </Stack>
