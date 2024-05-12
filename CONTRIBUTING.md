@@ -37,7 +37,11 @@ Welcome to Lofi-Beats! I'm excited to have you contribute. Before you get starte
 
 ## Issue Tracker 🗒️
 
-Check out the [Issue Tracker](https://github.com/ArvindParekh/lofi-music-app/issues) to find tasks and bugs that you can help with.
+Check out the [Issue Tracker](https://github.com/ArvindParekh/Lofi-Music-App/issues) to find tasks and bugs that you can help with.
+
+### Issue Assignment
+
+Simply comment `/assign` on an issue, and our GitHub Action will automatically assign the issue to you.
 
 ## Contact
 
