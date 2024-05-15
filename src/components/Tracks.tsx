@@ -1,4 +1,4 @@
-import TrackCard from "@/components/TrackCard";
+import TrackCard from "./TrackCard.tsx";
 import tracksData from "../data/tracks";
 import useAudioPlayer from "../lib/useAudioPlayer";
 
@@ -29,9 +29,9 @@ const Tracks = () => {
                 desc={track.desc}
                 sound={track.sound}
                 onClick={handleClick}
-                id={index}
-                playingStatus={isPlaying}
-                trackPlaying={trackIdPlaying.current}
+                id={index + ""}
+                playingStatus={isPlaying + ""}
+                trackPlaying={trackIdPlaying.current + ""}
               />
             );
           })}
