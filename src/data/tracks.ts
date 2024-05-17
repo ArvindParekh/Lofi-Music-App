@@ -1,4 +1,11 @@
-const tracksData = [
+interface TrackData {
+  src: string,
+  name: string,
+  desc: string,
+  sound: string
+}
+
+const tracksData: Array<TrackData> = [
   {
     src: "lofi-girl-lofi",
     name: "Crescent Moon",
@@ -6,7 +13,7 @@ const tracksData = [
     sound: "crescent-moon",
   },
   {
-    src: 2,
+    src: "2",
     name: "Ghost Celestia",
     desc: "Ethereal Journey",
     sound: "ghostrifter-official-celestia",

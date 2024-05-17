@@ -1,4 +1,6 @@
-const Footer = () => {
+import React from "react";
+
+const Footer: React.FC = (): JSX.Element => {
   return (
     <footer className="border mt-1 max-w-md min-w-max mx-auto w-fit p-3 rounded-full bg-blue-50 bg-opacity-10">
       Made by{" "}
