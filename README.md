@@ -37,7 +37,7 @@ A soothing Lofi Music App built using React and Tailwind CSS, offering a collect
 - [x] Add a music playing animation (something like spotify mobile track playing animation) next to the track that is currently playing.
 - [ ] Style the slider.
 - [ ] Add tests for components.
-- [ ] Build an FM lofi player
+- [ ] Build an FM lofi player.
 
 ## 💁 Contributions
 
