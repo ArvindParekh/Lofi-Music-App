@@ -1,4 +1,6 @@
-const Header = function () {
+import React from "react";
+
+const Header: React.FC = function (): JSX.Element {
   return (
     <>
       <div className="flex flex-col space-y-5 sm:flex-row sm:space-y-0 items-center justify-between my-10">

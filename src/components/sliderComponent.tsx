@@ -1,6 +1,7 @@
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Slider from "@mui/material/Slider";
+import { ChangeEvent } from "react";
 
 /**
  * A slider component for controlling volume.
@@ -12,26 +13,26 @@ import Slider from "@mui/material/Slider";
  * @param {string} props.className - The CSS class name for the component.
  * @returns {JSX.Element} The rendered slider component.
  */
-function ContinuousSlider(props) {
-  const handleChange = (event, newValue) => {
-    /* eslint-disable-next-line react/prop-types */
+
+interface Props {
+  value: number,
+  onVolumeChange: (event: ChangeEvent<{}>, newValue: number)=> void,
+  className: string
+}
+
+function ContinuousSlider(props: Props): JSX.Element {
+  const handleChange = (event: Event, newValue: number) => {
     props.onVolumeChange(event, newValue);
   };
 
   return (
-    //  eslint-disable-next-line react/prop-types
     <Box sx={{ width: 150 }} className={props.className}>
       <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
-        {/* eslint-disable-next-line react/prop-types */}
         <Slider
           aria-label="Volume"
           value={props.value}
           onChange={handleChange}
-          // sx={{
-          //   color: "#22c55e"
-          // }}
         />
-        {/* <VolumeUp /> */}
       </Stack>
     </Box>
   );

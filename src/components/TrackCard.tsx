@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 
+import React from "react";
+
 /**
  * TrackCard component represents a card displaying a track in the lofi-music-app.
  * It allows users to play tracks and ambient effects.
@@ -16,7 +18,19 @@
  * @param {Function} props.onClick - The function to handle the click event on the track card.
  * @returns {JSX.Element} The rendered TrackCard component.
  */
-const TrackCard = (props) => {
+
+interface Props {
+  name: string,
+  desc: string,
+  src: string,
+  sound: string,
+  id: string,
+  trackPlaying: string,
+  playingStatus: string,
+  onClick: (event: React.MouseEvent<HTMLAudioElement, MouseEvent>) => void
+}
+
+const TrackCard = (props: Props) => {
   return (
     <>
       <div className="flex flex-col justify-center">
@@ -24,7 +38,7 @@ const TrackCard = (props) => {
           className={
             `overflow-hidden rounded-md min-w-max cursor-pointer` /*props.trackPlaying==props.id && props.playingStatus  ? 'border-4 border-gray-800' : 'border border-transparent'*/
           }
-          onClick={(event) => {
+          onClick={(event: any) => {
             props.onClick(event);
           }}
         >

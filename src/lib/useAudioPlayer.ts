@@ -1,6 +1,6 @@
 //Custom useAudioPlayer hook
 
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 /**
  * Custom hook for managing audio player functionality.
@@ -11,13 +11,14 @@ import { useState, useEffect, useRef } from "react";
  *   - trackIdPlaying: A reference to the currently playing track ID.
  */
 function useAudioPlayer() {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [audio, setAudio] = useState(new Audio());
-  const trackIdPlaying = useRef(null);
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [audio, setAudio] = useState<HTMLAudioElement>(new Audio());
+  const trackIdPlaying = useRef<string | null>(null);
 
-  const handleClick = (event) => {
-    const audioSrc = event.target.getAttribute("data-audio-src");
-    const trackId = event.target.getAttribute("data-track-id");
+  const handleClick = (event: React.MouseEvent<HTMLAudioElement, MouseEvent>) => {
+    const target = event.target as HTMLAudioElement;
+    const audioSrc = target.getAttribute("data-audio-src");
+    const trackId = target.getAttribute("data-track-id");
 
     if (trackId == trackIdPlaying.current) {
       //same track clicked by the user, so pause the song; assume song is already playing
@@ -55,7 +56,7 @@ function useAudioPlayer() {
         .then(() => {
           setIsPlaying(true);
         })
-        .catch((error) => {
+        .catch((error: Error) => {
           console.log("Error playing media: ", error);
         });
     } else {

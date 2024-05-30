@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
-
-import { useState, useEffect } from "react";
-import ContinuousSlider from "./sliderComponent";
+import { useState, useEffect, ChangeEvent } from "react";
+import ContinuousSlider from "./sliderComponent.tsx";
 
 /**
  * Represents a Music Card component.
@@ -13,13 +12,20 @@ import ContinuousSlider from "./sliderComponent";
  * @param {string} props.name - The name of the music card.
  * @returns {JSX.Element} The rendered Music Card component.
  */
-const MusicCard = (props) => {
-   const [isSelected, setIsSelected] = useState(false);
-   const [isPlaying, setIsPlaying] = useState(false);
-   const [audio] = useState(
+interface Props {
+   type: string,
+   sound: string,
+   src: string,
+   name: string
+}
+
+const MusicCard = (props: Props): JSX.Element => {
+   const [isSelected, setIsSelected] = useState<boolean>(false);
+   const [isPlaying, setIsPlaying] = useState<boolean>(false);
+   const [audio] = useState<any>(
       new Audio(`/assets/sound/${props.type}/${props.sound}.mp3`)
    );
-   const [value, setValue] = useState(30);
+   const [value, setValue] = useState<number>(30);
 
    const toggleSound = () => {
       if (props.type === "effect") {
@@ -37,7 +43,7 @@ const MusicCard = (props) => {
                      setIsPlaying(true);
                      setIsSelected(true);
                   })
-                  .catch((error) => console.log("Error Playing: ", error));
+                  .catch((error: any) => console.log("Error Playing: ", error));
             }
          }
       }
@@ -49,7 +55,7 @@ const MusicCard = (props) => {
       };
    }, [audio]);
 
-   function handleVolumeChange(event, newValue) {
+   function handleVolumeChange(event: ChangeEvent<{}>, newValue: number) {
       setValue(newValue);
       audio.volume = value / 100;
    }

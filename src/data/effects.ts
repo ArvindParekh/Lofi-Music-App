@@ -1,4 +1,11 @@
-const effectsData = [
+interface EffectsData {
+  type: string,
+  name: string,
+  sound: string,
+  src: string
+}
+
+const effectsData: Array<EffectsData> = [
   {
     type: "effect",
     name: "Fire",
