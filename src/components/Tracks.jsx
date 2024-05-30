@@ -2,6 +2,8 @@ import TrackCard from "@/components/TrackCard";
 import tracksData from "../data/tracks";
 import useAudioPlayer from "../lib/useAudioPlayer";
 
+import "@/Sliders.css";
+
 /**
  * Renders the Tracks component.
  *
@@ -18,7 +20,7 @@ const Tracks = () => {
         </h1>
         <div
           id="trackCards"
-          className="flex items-center gap-5 lg:justify-between overflow-x-auto"
+          className="flex items-center gap-5 lg:justify-between scroller"
         >
           {tracksData.map((track, index) => {
             return (

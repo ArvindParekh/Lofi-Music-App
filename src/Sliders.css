@@ -1,0 +1,21 @@
+.scroller {
+  overflow-x: auto;
+}
+
+.scroller::-webkit-scrollbar {
+  height: 12px;
+}
+
+.scroller::-webkit-scrollbar-track {
+  background: #80808052;
+  border-radius: 6px;
+}
+
+.scroller::-webkit-scrollbar-thumb {
+  background-color: #9736ffad;
+  border-radius: 6px;
+}
+
+.scroller::-webkit-scrollbar-thumb:hover {
+  background-color: #D8BFD8;
+}
