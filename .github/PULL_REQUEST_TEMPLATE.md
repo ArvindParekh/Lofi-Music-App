@@ -1,0 +1,2 @@
+- [ ] The PR title provides a concise description of my changes
+- [ ] Closes #xxxx (Replace xxxx with the GitHub issue number)
