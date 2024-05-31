@@ -36,6 +36,7 @@ const TrackCard = (props) => {
             className="object-cover aspect-[3/4] hover:scale-105 duration-300"
             data-audio-src={props.sound}
             data-track-id={props.id}
+            data-is-track="true"
           />
         </div>
         <div className="space-y-1 text-sm mt-2.5 transition-all">
