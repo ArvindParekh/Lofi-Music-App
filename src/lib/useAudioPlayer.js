@@ -14,10 +14,9 @@ import { useState, useEffect, useRef } from "react";
 function useAudioPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [audio, setAudio] = useState(new Audio());
-  const [playingAudioIds, setPlayingAudioIds] = useState(new Set());
   const audioRefs = useRef({});
   const trackIdPlaying = useRef(null);
-
+  
   const handleClick = (event) => {
     const audioSrc = event.target.getAttribute("data-audio-src");
     const trackId = event.target.getAttribute("data-track-id");
@@ -25,48 +24,59 @@ function useAudioPlayer() {
     const type = event.target.getAttribute("data-type");
 
     if (isTrack) {
-      // Track case: handle single track playback
-      if (trackId == trackIdPlaying.current) {
-        //same track clicked by the user, so pause the song; assume song is already playing
-        audio.pause();
-        audio.currentTime = 0;
-        setIsPlaying(false);
-        trackIdPlaying.current = null;
-      } else {
-        //if audio is already playing, stop it, and play the new audio
-        if (isPlaying) {
-          audio.pause();
-          audio.currentTime = 0;
-          setIsPlaying(false);
-          setAudio(new Audio(`/assets/sound/track/${audioSrc}.mp3`));
-          trackIdPlaying.current = trackId;
-        }
-        //else, directly play the new audio
-        else {
-          setAudio(new Audio(`/assets/sound/track/${audioSrc}.mp3`));
-          trackIdPlaying.current = trackId;
-        }
-      }
+      handleTrackPlayback(trackId, audioSrc);
     } else {
-      // Non-track case: allow multiple sounds
-      if (playingAudioIds.has(trackId)) {
-        // Same sound clicked, pause/play;
-        audioRefs.current[trackId].volume = audio.volume;
-        audioRefs.current[trackId].paused
-          ? (audioRefs.current[trackId].play(), trackIdPlaying.current = trackId, setIsPlaying(true))
-          : (audioRefs.current[trackId].pause(), trackIdPlaying.current = trackId, setIsPlaying(false));
-      } else {
-        // New sound, play it
-        const audio = new Audio(`/assets/sound/${type}/${audioSrc}.mp3`);
-        audioRefs.current[trackId] = audio;
-        audio.play().then(() => {
+      handleNonTrackPlayback(trackId, type, audioSrc);
+    }
+  };
+
+  const handleTrackPlayback = (trackId, audioSrc) => {
+    if (trackId == trackIdPlaying.current) {
+      toggleAudioPlayback(audio);
+    } else {
+      if (isPlaying) {
+        toggleAudioPlayback(audio);
+      }
+      setAudio(new Audio(`/assets/sound/track/${audioSrc}.mp3`));
+      trackIdPlaying.current = trackId;
+    }
+  };
+
+  const handleNonTrackPlayback = (trackId, type, audioSrc) => {
+    if (audioRefs.current[trackId]) {
+      toggleAudioPlayback(audioRefs.current[trackId]);
+    } else {
+      const newAudio = new Audio(`/assets/sound/${type}/${audioSrc}.mp3`);
+      audioRefs.current[trackId] = newAudio;
+      playAudio(newAudio)
+        .then(() => {
           setIsPlaying(true);
           trackIdPlaying.current = trackId;
-          setPlayingAudioIds(new Set([...playingAudioIds, trackId]));
-        });
-      }
+        })
+        .catch((error) => console.error("Error playing audio:", error));
     }
-  }
+  };
+
+  const toggleAudioPlayback = (audio) => {
+    if (audio.paused) {
+      audio.play();
+      setIsPlaying(true);
+    } else {
+      audio.pause();
+      audio.currentTime = 0;
+      setIsPlaying(false);
+    }
+  };
+
+  const playAudio = (audio) => {
+    // Handle potential errors during audio creation
+    if (!audio) {
+      console.error("Error creating audio object");
+      return Promise.reject(new Error("Failed to create audio object"));
+    }
+    return audio.play();
+  };
+
 
   // Cleanup function when component unmounts
   useEffect(() => {

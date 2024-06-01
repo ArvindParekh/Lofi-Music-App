@@ -19,71 +19,58 @@ import ContinuousSlider from "./sliderComponent";
  * @returns {JSX.Element} The rendered Music Card component.
  */
 const MusicCard = (props) => {
-  const [value, setValue] = useState(30);
+  const [volume, setVolume] = useState(30);
+  const [isSelected, setIsSelected] = useState(props.id === props.trackPlaying);
 
-  const [isSelected, setIsSelected] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
+  useEffect(() => {
+    setIsSelected(props.id === props.trackPlaying);
+  }, [props.trackPlaying, props.id]);
 
   const handleVolumeChange = (event, newValue) => {
-    setValue(newValue);
-    props.audio.current[props.id].volume = value / 100;
-    console.log(value / 100);
+    setVolume(newValue);
+    props.audio.current[props.id].volume = volume / 100;
+    console.log(volume / 100);
   };
 
-  const togglePlaying = () => {
-    if (isPlaying) {
-      setIsPlaying(false);
-      setIsSelected(false);
-    } else {
-      setIsPlaying(true);
-      setIsSelected(true);
-    }
-  }
-
   return (
-    <>
-      <div className="flex flex-col items-center h-56">
-        <div
-          className={`cursor-pointer relative rounded-xl flex items-center justify-center transition-all duration-100 overflow-hidden min-w-max ${
-              isSelected
-              ? "shadow-[0_0_0_4px] shadow-green-500"
-              : ""
-          }`}
-          onClick={(event) => {
-            togglePlaying();
-            props.audio.volume = value / 100;
-            props.onClick(event);
-          }}
-        >
-          <div className="overflow-hidden rounded-md">
-            <img
-              src={`/assets/background/${props.src}.jpg`} // Use the sound name for the image
-              width={180}
-              height={330}
-              className="object-cover aspect-square hover:scale-105 duration-300"
-              data-audio-src={props.sound}
-              data-track-id={props.id}
-              data-type={props.type}
-            />
-          </div>
-          <div
-            className={`pointer-events-none absolute px-5 bg-slate-100 bg-opacity-50 text-black rounded-3xl ${
-              isSelected
-              ? "bg-green-600 bg-opacity-100 text-white"
-              : ""
-            }`}
-          >
-            {props.name}
-          </div>
+    <div className="flex flex-col items-center h-56">
+      <div
+        className={`cursor-pointer relative rounded-xl flex items-center justify-center transition-all duration-100 overflow-hidden min-w-max ${
+          isSelected ? "shadow-[0_0_0_4px] shadow-green-500" : ""
+        }`}
+        onClick={(event) => {
+          setIsSelected(!isSelected);
+          // Call onClick handler with relevant data
+          props.onClick(event);
+        }}
+      >
+        <div className="overflow-hidden rounded-md">
+          <img
+            src={`/assets/background/${props.src}.jpg`}
+            width={180}
+            height={330}
+            className="object-cover aspect-square hover:scale-105 duration-300"
+            data-audio-src={props.sound}
+            data-track-id={props.id}
+            data-type={props.type}
+          />
         </div>
-        <ContinuousSlider
-          className={`${isSelected ? "" : "hidden"}`}
-          value={value}
-          onVolumeChange={handleVolumeChange}
-        />
+        <div
+          className={`pointer-events-none absolute px-5 bg-slate-100 bg-opacity-50 text-black rounded-3xl ${
+            isSelected ? "bg-green-600 bg-opacity-100 text-white" : ""
+          }`}
+        >
+          {props.name}
+        </div>
       </div>
-    </>
-   );
+      <ContinuousSlider
+        className={`${isSelected ? "" : "hidden"}`}
+        value={volume}
+        onVolumeChange={handleVolumeChange}
+      />
+    </div>
+  );
 };
+
 
 export default MusicCard;

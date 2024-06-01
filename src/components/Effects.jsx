@@ -9,7 +9,17 @@ import useAudioPlayer from "../lib/useAudioPlayer";
  * @returns {JSX.Element} The rendered Effects component.
  */
 const Effects = () => {
-  const { isPlaying, handleClick, trackIdPlaying, audioRefs } = useAudioPlayer();
+  const { 
+    isPlaying, 
+    handleClick, 
+    trackIdPlaying, 
+    audioRefs 
+  } = useAudioPlayer();
+
+  const isCurrentPlaying = (index) => {
+    return trackIdPlaying.current === index;
+  };
+
   return (
     <div className="text-center md:lg:text-left">
       <h1 className="text-gray-400 font-medium text-xl bg-slate-800 bg-opacity-50 rounded-full inline-block px-5 py-2 my-5">
@@ -28,7 +38,7 @@ const Effects = () => {
               audio={audioRefs}
               onClick={handleClick}
               playingStatus={isPlaying}
-              trackPlaying={trackIdPlaying.current}
+              trackPlaying={isCurrentPlaying(index)}
             />
           );
         })}
