@@ -13,28 +13,28 @@ import Slider from "@mui/material/Slider";
  * @returns {JSX.Element} The rendered slider component.
  */
 function ContinuousSlider(props) {
-  const handleChange = (event, newValue) => {
-    /* eslint-disable-next-line react/prop-types */
-    props.onVolumeChange(event, newValue);
-  };
+	const handleChange = (event, newValue) => {
+		/* eslint-disable-next-line react/prop-types */
+		props.onVolumeChange(event, newValue);
+	};
 
-  return (
-    //  eslint-disable-next-line react/prop-types
-    <Box sx={{ width: 150 }} className={props.className}>
-      <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
-        {/* eslint-disable-next-line react/prop-types */}
-        <Slider
-          aria-label="Volume"
-          value={props.value}
-          onChange={handleChange}
-          // sx={{
-          //   color: "#22c55e"
-          // }}
-        />
-        {/* <VolumeUp /> */}
-      </Stack>
-    </Box>
-  );
+	return (
+		//  eslint-disable-next-line react/prop-types
+		<Box sx={{ width: 150 }} className={props.className}>
+			<Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
+				{/* eslint-disable-next-line react/prop-types */}
+				<Slider
+					aria-label="Volume"
+					value={props.value}
+					onChange={handleChange}
+					// sx={{
+					//   color: "#22c55e"
+					// }}
+				/>
+				{/* <VolumeUp /> */}
+			</Stack>
+		</Box>
+	);
 }
 
 export default ContinuousSlider;

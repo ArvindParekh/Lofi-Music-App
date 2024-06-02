@@ -4,15 +4,15 @@ import MainContent from "./app/MainContent";
 import Footer from "./app/Footer";
 
 function App() {
-  return (
-    <>
-      <Header />
+	return (
+		<>
+			<Header />
 
-      <MainContent />
+			<MainContent />
 
-      <Footer />
-    </>
-  );
+			<Footer />
+		</>
+	);
 }
 
 export default App;
