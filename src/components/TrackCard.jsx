@@ -1,5 +1,8 @@
 /* eslint-disable react/prop-types */
 
+/* Import Statements */
+import React, { useState, useEffect } from 'react';
+
 /**
  * TrackCard component represents a card displaying a track in the lofi-music-app.
  * It allows users to play tracks and ambient effects.
@@ -16,7 +19,24 @@
  * @param {Function} props.onClick - The function to handle the click event on the track card.
  * @returns {JSX.Element} The rendered TrackCard component.
  */
+
+
+/* Constants */
+const SMALL_SCREEN_WIDTH = 600
+
 const TrackCard = (props) => {
+  /* Identify small screens */
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < SMALL_SCREEN_WIDTH);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < SMALL_SCREEN_WIDTH);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <>
       <div className="flex flex-col justify-center">
@@ -39,13 +59,18 @@ const TrackCard = (props) => {
           />
         </div>
         <div className="space-y-1 text-sm mt-2.5 transition-all">
-          <div className="flex items-center gap-3">
-            <h3
+          <div className="flex items-center gap-3 justify-center sm:justify-start">
+          <h3
               className={`font-medium leading-none ${
                 props.trackPlaying == props.id && props.playingStatus
                   ? "text-green-400 underline"
                   : ""
-              } transition-all`}
+                } transition-all text-center sm:text-left`}
+                style={{
+                  // Apply marginLeft: 30px; on screens smaller than sm 
+                  marginLeft:  isSmallScreen  ? '30px' : '0px',
+                  transition: 'margin-left 0.2s ease', // Apply transition to margin-left
+                }}
             >
               {props.name}
             </h3>
@@ -58,7 +83,7 @@ const TrackCard = (props) => {
                 props.trackPlaying == props.id && props.playingStatus
                   ? "opacity-100 visible"
                   : "opacity-0 invisible"
-              } transition-all duration-200 invert accent-green-900`}
+                } transition-all duration-200 invert accent-green-900`}
             />
           </div>
           <p className="text-xs text-muted-foreground">{props.desc}</p>
