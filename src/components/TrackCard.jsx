@@ -39,7 +39,7 @@ const TrackCard = (props) => {
           />
         </div>
         <div className="space-y-1 text-sm mt-2.5 transition-all">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 ml-16 sm:ml-0">
             <h3
               className={`font-medium leading-none ${
                 props.trackPlaying == props.id && props.playingStatus
@@ -61,7 +61,9 @@ const TrackCard = (props) => {
               } transition-all duration-200 invert accent-green-900`}
             />
           </div>
+          <div className="flex items-center gap-3 ml-16 sm:ml-0">
           <p className="text-xs text-muted-foreground">{props.desc}</p>
+            </div>
         </div>
       </div>
     </>
